@@ -1,4 +1,4 @@
-const apiKey = 'VP7B7ZX1LLI60I77';
+const apiKey = '84XZXL7N7LRULISN';
 const CACHE_EXPIRY_TIME = 5 * 60 * 1000; // Cache expires in 5 minutes
 const API_RETRY_INTERVAL = 10 * 60 * 1000; // Retry API calls after 10 minutes if limit was reached
 let apiLimitReached = false;
@@ -22,9 +22,6 @@ async function fetchStockData(symbol) {
         const { intradayData, dailyData, timestamp } = JSON.parse(cachedData);
 
         if (isCacheValid(timestamp) || apiLimitReached) {
-            if (symbol === 'NASDAQ') {
-                populateNasdaqChart(dailyData);
-            }
             // Use cached data if valid
             if (document.getElementById('holdings-stocks')){
                 return { intradayData, dailyData };
@@ -68,9 +65,6 @@ async function fetchStockData(symbol) {
             // Fallback to last cached data if available
             if (cachedData) {
                 const { intradayData, dailyData, timestamp } = JSON.parse(cachedData);
-                if (symbol === 'NASDAQ') {
-                    populateNasdaqChart(dailyData);
-                }
                 if (document.getElementById('holdings-stocks')){
                     // console.log(intradayData);
                     return { intradayData, dailyData };
@@ -99,9 +93,6 @@ async function fetchStockData(symbol) {
                 dailyData,
                 timestamp: Date.now()
             }));
-            if (symbol === 'NASDAQ') {
-                populateNasdaqChart(dailyData);
-            }
             if (document.getElementById('holdings-stocks')){
                 return { intradayData, dailyData };
             }
@@ -187,7 +178,6 @@ function displayStockData(data) {
         year: 'numeric', month: 'short', day: 'numeric',
         hour: '2-digit', minute: '2-digit', second: '2-digit'
     });
-    // document.getElementById('lastUpdated').textContent = `Last Updated: ${formattedTime}`;
 }
 
 function displayFallbackData() {
@@ -198,7 +188,6 @@ function displayFallbackData() {
     document.getElementById('high').textContent = 'N/A';
     document.getElementById('close').textContent = 'N/A';
     document.getElementById('volume').textContent = 'N/A';
-    // document.getElementById('lastUpdated').textContent = 'Failed to fetch data';
 }
 
 function cal_stock_stats(portfolio) {
@@ -211,7 +200,6 @@ function cal_stock_stats(portfolio) {
         const intraDayData = stockData.intra_day_Data;
         const quantity = stockData.quantity;
 
-        // Calculate timestamps and get the latest and opening data
         const timestamps = Object.keys(intraDayData).sort((a, b) => new Date(b) - new Date(a));
         const latestData = intraDayData[timestamps[0]];
         const openingData = intraDayData[timestamps[timestamps.length - 1]];
@@ -220,7 +208,6 @@ function cal_stock_stats(portfolio) {
         const openPrice = parseFloat(openingData["1. open"]);
 
         // Calculate individual stock change values
-        const changeValue = (closePrice - openPrice) * quantity;
         const totalGainLoss = (closePrice * quantity) - (openPrice * quantity);
         const todayChangePercentage = ((closePrice - openPrice) / openPrice) * 100;
 
@@ -317,7 +304,6 @@ document.addEventListener('DOMContentLoaded', () => {
         else{
             const totalPortfolioValue = portfolio_data.stockvalue.reduce((sum, total) => sum + parseFloat(total), 0);
 
-            // console.log(totalPortfolioValue);
             // for aggregated RSI chart
             const rsi_portfolioPromises = portfolio_data.identifier.map((symbol, index) => {
             const quantity = parseFloat(portfolio_data.quantities[index]);

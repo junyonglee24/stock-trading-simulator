@@ -2,9 +2,6 @@
 include 'tradingdg13_connect.php';
 session_start();
 
-// $_SESSION['username'] = 'joshi37y';
-
-
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit;
@@ -25,8 +22,7 @@ $email = $_SESSION['email'];
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="wallet.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script type="text/javascript" src="dashboard.js"></script>
-    <script type="text/javascript" src="stock_api_today.js"></script> -->
+
     <?php
     include 'holdings_stats.php';
     include 'retrieve_balance.php';
@@ -49,7 +45,6 @@ $email = $_SESSION['email'];
 
     <div class="navbar">
         <div class="user-info">
-            <!-- <img src="profile-picture.jpg" alt="Profile Picture" class="user-icon"> -->
             <div class="user-details">
                 <span class="user-name"><?php echo htmlspecialchars($firstName . ' ' . $lastName); ?></span>
                 <span class="account-info">Username: <?php echo htmlspecialchars($userid); ?></span>
@@ -163,7 +158,7 @@ $email = $_SESSION['email'];
 
     function closeTopupPopup(){
         popup.classList.remove("open-popup");    
-    // Redirect to wallet.php after a delay (e.g., 1 second)
+    // Redirect to wallet.php after a delay
     setTimeout(() => {
         window.location.href = 'wallet.php';
     }, 1000);

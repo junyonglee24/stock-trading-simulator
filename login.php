@@ -44,7 +44,7 @@ if (isset($_SESSION['username'])) {
             <?php
             if (isset($_SESSION['login_error'])) {
                 echo '<p class="error-message">' . $_SESSION['login_error'] . '</p>';
-                unset($_SESSION['login_error']); // Clear the error message after displaying it
+                unset($_SESSION['login_error']);
             }
             ?>
 

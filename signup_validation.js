@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Attach event listeners to clear error messages when user starts typing
     const inputsToValidate = [
         { id: "username", regex: /^[A-Za-z0-9_]{3,15}$/, error: "Username must be 3-15 characters, and can only include letters, numbers, and underscores." },
         { id: "firstname", regex: /^[A-Za-z\s]+$/, error: "First name should contain only letters and spaces." },
@@ -10,10 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     inputsToValidate.forEach(input => {
         const field = document.getElementById(input.id);
-        field.addEventListener("input", () => field.setCustomValidity("")); // Clear error on input
+        field.addEventListener("input", () => field.setCustomValidity("")); 
     });
 
-    // Confirm password match check
     document.getElementById("confirm-password").addEventListener("input", () => {
         document.getElementById("confirm-password").setCustomValidity("");
     });
@@ -22,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
 function validateForm() {
     let isValid = true;
 
-    // Username validation
     const usernameInput = document.getElementById("username");
     const usernameRegex = /^[A-Za-z0-9_]{3,15}$/;
     if (!usernameRegex.test(usernameInput.value.trim())) {
@@ -32,7 +29,6 @@ function validateForm() {
         usernameInput.setCustomValidity("");
     }
 
-    // First Name validation
     const firstNameInput = document.getElementById("firstname");
     const nameRegex = /^[A-Za-z\s]+$/;
     if (!nameRegex.test(firstNameInput.value.trim())) {
@@ -42,7 +38,6 @@ function validateForm() {
         firstNameInput.setCustomValidity("");
     }
 
-    // Last Name validation
     const lastNameInput = document.getElementById("lastname");
     if (!nameRegex.test(lastNameInput.value.trim())) {
         lastNameInput.setCustomValidity("Last name should contain only letters.");
@@ -51,7 +46,6 @@ function validateForm() {
         lastNameInput.setCustomValidity("");
     }
 
-    // Email validation
     const emailInput = document.getElementById("email");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailInput.value.trim())) {
@@ -61,7 +55,6 @@ function validateForm() {
         emailInput.setCustomValidity("");
     }
 
-    // Password validation
     const passwordInput = document.getElementById("password");
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!passwordRegex.test(passwordInput.value)) {
@@ -71,7 +64,6 @@ function validateForm() {
         passwordInput.setCustomValidity("");
     }
 
-    // Confirm Password validation
     const confirmPasswordInput = document.getElementById("confirm-password");
     if (confirmPasswordInput.value !== passwordInput.value) {
         confirmPasswordInput.setCustomValidity("Passwords do not match.");
@@ -80,11 +72,10 @@ function validateForm() {
         confirmPasswordInput.setCustomValidity("");
     }
 
-    // Show validation messages if form is invalid
     if (!isValid) {
-        document.querySelector("form").reportValidity(); // Show all custom validation messages
-        return false; // Prevent form submission
+        document.querySelector("form").reportValidity(); 
+        return false; 
     }
 
-    return true; // Allow form submission if all fields are valid
+    return true; 
 }

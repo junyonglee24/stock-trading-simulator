@@ -1,12 +1,11 @@
 <?php
-session_start(); // Start session to retrieve error message
+session_start();
 
-// Retrieve error message from session if it exists, then clear it
 $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
-unset($_SESSION['error']); // Clear error from session after retrieving
+unset($_SESSION['error']);
 
 $successMessage = isset($_SESSION['success_message']) ? $_SESSION['success_message'] : '';
-unset($_SESSION['success_message']); // Clear message after displaying
+unset($_SESSION['success_message']); 
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +44,6 @@ unset($_SESSION['success_message']); // Clear message after displaying
             <p class="success-message"><?php echo htmlspecialchars($successMessage); ?></p>
             <?php endif; ?>
 
-            <!-- Display Error Message if it exists -->
             <?php if (!empty($error)) : ?>
                 <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
             <?php endif; ?>
