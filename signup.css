@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Poppins', sans-serif;
+    background-color: #0c1e32;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1500px;
+    height: 800px;
+    border-radius: 8px;
+    overflow: visible;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.left-side {
+    background-color: #0c1e32;
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-box {
+    text-align: center;
+    border: 2px solid #ffffff;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.logo-box h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-box p {
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.description {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.description p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #b0b3b8;
+}
+
+.features button {
+    background-color: #44546a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.footer-text {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #b0b3b8;
+}
+
+.right-side {
+    width: 50%;
+    background-color: #1c1c1c;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side h2 {
+    font-size: 24px;
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+
+.signup-form {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form label {
+    color: #b0b3b8;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.signup-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #333333;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.password-container {
+    position: relative;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #00aaff;
+    cursor: pointer;
+}
+
+.create-account {
+    background-color: #00aaff;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links span {
+    color: #b0b3b8;
+    margin: 0 5px;
+}
+
+.password-requirements {
+    color: #b0b3b8;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.password-requirements li {
+    margin-bottom: 5px;
+}
+
+
+.error-message {
+    color: #ff0000; 
+    font-weight: bold; 
+    background-color: #ffe5e5; 
+    border: 1px solid #ff0000;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.investment-profile-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.investment-profile-form label {
+    color: #b0b3b8;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.investment-profile-form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #333333;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+/* Submit button styling */
+.submit-profile {
+    background-color: #00aaff;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-profile:hover {
+    background-color: #0056b3;
+}
+
+.popup{
+    width: 400px;
+    background:#333;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 30px;
+    color: #ffffff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s, top 0.4s;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.popup h2{
+    padding-top:10px;
+}
+
+.popup p{
+    padding: 10px;
+    font-size: 14px;
+}
+
+.popup button {
+    width:20%;
+    background:#6fd649;
+    padding:2px;
+    border-radius:4px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
