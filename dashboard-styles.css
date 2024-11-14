@@ -18,7 +18,6 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    /* margin-right: 10px; */
 }
 
 .sidebar-item {
@@ -67,15 +66,6 @@ body {
     align-items: center;
     gap: 20px;
 }
-
-/* .user-icon {
-    background-color: #4caf50;
-    color: white;
-    border-radius: 50%;
-    padding: 10px;
-    margin-right: 10px;
-    font-weight: bold;
-} */
 
 .user-details {
     display: flex;
@@ -199,8 +189,6 @@ body {
     padding-left: 15px;
     width: 100%;
     background-color: #1f1f1f;
-    /* border-radius: 10px; */
-    /* margin-right: 100px; */
 }
 
 .chart-title h3{
@@ -213,9 +201,6 @@ body {
     position: relative;
 }
 
-/* .chart-box canvas {
-    max-height: 400px;
-} */
 
 .lower-panel {
     display: flex;
@@ -361,13 +346,6 @@ button:hover {
     overflow-y: auto;
 }
 
-/* .chart-box {
-    max-height: 500px;
-    overflow: hidden;
-} */
-
-
-
 @media (max-width: 768px) {
     .charts-container {
         flex-direction: column;
@@ -398,14 +376,13 @@ button:hover {
     color: #f00;
 }
 
-/* Watchlist container styling */
+
 .watchlist {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* Watchlist item styling */
 .watchlist-item {
     display: flex;
     justify-content: space-between;
@@ -414,11 +391,11 @@ button:hover {
     border-bottom: 1px solid #333;
 }
 
-/* Left section: stock symbol and name */
+
 .stock-info {
     display: flex;
     flex-direction: column;
-    width: 40%; /* Adjust as needed for alignment */
+    width: 40%; 
 }
 
 .stock-symbol {
@@ -432,12 +409,11 @@ button:hover {
     color: #888;
 }
 
-/* Right section: stock pricing */
 .stock-pricing {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 30%; /* Adjust as needed for alignment */
+    width: 30%; 
 }
 
 .stock-price {
@@ -448,7 +424,7 @@ button:hover {
 
 .stock-change {
     font-size: 0.9em;
-    color: #4caf50; /* Green for positive values */
+    color: #4caf50; 
 }
 
 .additional-info {

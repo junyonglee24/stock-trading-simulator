@@ -1,8 +1,9 @@
 const apiKey = 'demo';
-const CACHE_EXPIRY_TIME = 5 * 60 * 1000; // 5 minutes
-const API_RETRY_INTERVAL = 10 * 60 * 1000; // 10 minutes
+const CACHE_EXPIRY_TIME = 5 * 60 * 1000; 
+const API_RETRY_INTERVAL = 10 * 60 * 1000; 
 let apiLimitReached = false; 
 
+//api query in csv
 function isCacheValid(timestamp) {
     return Date.now() - timestamp < CACHE_EXPIRY_TIME;
 }
@@ -30,7 +31,6 @@ async function fetchStockData(symbol) {
         const dailyResponse = await fetch(daily_url);
         const dailyCsv = await dailyResponse.text();
 
-        // Check for API limit notice in the response
         if (dailyCsv.includes("API call frequency")) {
             console.warn('API call limit reached. Using last cached data.');
             apiLimitReached = true;
@@ -58,7 +58,7 @@ async function fetchStockData(symbol) {
     }
 }
 
-// Helper function to parse CSV into JSON
+//CSV to json parsing
 function parseCSV(csvText) {
     const lines = csvText.trim().split('\n');
     const headers = lines[0].split(',');
@@ -82,7 +82,7 @@ function parseCSV(csvText) {
     return data;
 }
 
-// Function to populate NASDAQ chart with data
+//populate chart
 function populateNasdaqChart(data) {
     const formattedData = Object.keys(data).map(date => {
         const [year, month, day] = date.split('-').map(Number);
@@ -107,7 +107,6 @@ function displayFallbackData() {
     document.getElementById('lastUpdated').textContent = 'Failed to fetch data';
 }
 
-// Set up chart on page load
 let nasdaqSeries;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -137,7 +136,5 @@ document.addEventListener('DOMContentLoaded', function() {
         color: '#4CAF50',
         lineWidth: 2,
     });
-
-    // Fetch initial stock data
     fetchStockData('MSFT');
 });
