@@ -80,7 +80,7 @@ $email = $_SESSION['email'];
             </div>
             <div class="account-info">
                 <h2>Today's Change</h2>
-                <p id="today_change">0.0 (0.00%)</p>
+                <p class="today_change">0.0 (0.00%)</p>
             </div>
             <div class="account-info">
                 <h2>Cash Available</h2>
