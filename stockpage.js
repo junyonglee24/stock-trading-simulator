@@ -1,28 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Initialize the chart using Chart.js
-    // const ctx = document.getElementById('stock-chart').getContext('2d');
-
-    // const stockChart = new Chart(ctx, {
-    //     type: 'line',
-    //     data: {
-    //         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-    //         datasets: [{
-    //             label: 'MSFT Price',
-    //             data: [400, 405, 403, 407, 406.52],
-    //             borderColor: 'rgba(75, 192, 192, 1)',
-    //             borderWidth: 2,
-    //             fill: false
-    //         }]
-    //     },
-    //     options: {
-    //         responsive: true,
-    //         scales: {
-    //             x: { title: { display: true, text: 'Day' } },
-    //             y: { title: { display: true, text: 'Price (USD)' } }
-    //         }
-    //     }
-    // });
-
     // Trade form submission event
     const tradeForm = document.getElementById('tradeForm');
     tradeForm.addEventListener('submit', (e) => {

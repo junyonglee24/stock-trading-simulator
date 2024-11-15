@@ -817,6 +817,10 @@ button:hover {
     margin-right: 15px;
 }
 
+.today_change, #holdings-total-value, #holdings-total-gain-loss {
+    font-weight: bold;
+}
+
 .holdings-container{
     display: flex;
     justify-content: space-around;
@@ -874,9 +878,3 @@ button:hover {
 #holdings-table tbody tr:hover {
     background-color: #2b2b2b;
 }
-
-/* #holdings-total-gain-loss,
-#today_change {
-    font-weight: bold;
-    font-size: 1.2em;
-} */

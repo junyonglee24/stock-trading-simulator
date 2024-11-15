@@ -329,9 +329,9 @@ h1 {
     font-weight: bold;
 }
 
-.account-info #today_change {
-    font-size: 20px;
-    color: #5cb85c;
+.today_change {
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .top-up {

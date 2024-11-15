@@ -20,7 +20,7 @@ CREATE TABLE userportfolio (
 
 CREATE TABLE transactions (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(10) NOT NULL,
+    username VARCHAR(50) NOT NULL,
     identifier VARCHAR(50) NOT NULL,
     buy_sell VARCHAR(50) NOT NULL,
     trade_type VARCHAR(50) NOT NULL,

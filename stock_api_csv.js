@@ -1,4 +1,4 @@
-const apiKey = '84XZXL7N7LRULISN';
+const apiKey = '37CPZWX1L9TF6A58';
 const CACHE_EXPIRY_TIME = 5 * 60 * 1000; // Cache expires in 5 minutes
 const API_RETRY_INTERVAL = 10 * 60 * 1000; // Retry API calls after 10 minutes if limit was reached
 let apiLimitReached = false;
@@ -29,7 +29,6 @@ async function fetchStockData(symbol) {
             else if (document.getElementsByClassName('wallet').length > 0){
                 return intradayData;
             }
-            console.log(intradayData);
             displayStockData(intradayData);
             candleStick(intradayData);
             rsiChart(dailyData);
@@ -66,13 +65,11 @@ async function fetchStockData(symbol) {
             if (cachedData) {
                 const { intradayData, dailyData, timestamp } = JSON.parse(cachedData);
                 if (document.getElementById('holdings-stocks')){
-                    // console.log(intradayData);
                     return { intradayData, dailyData };
                 }
                 else if (document.getElementsByClassName('wallet').length > 0){
                     return intradayData;
                 }
-                console.log(intradayData);
                 displayStockData(intradayData);
                 candleStick(intradayData);
                 rsiChart(dailyData);
@@ -99,7 +96,6 @@ async function fetchStockData(symbol) {
             else if (document.getElementsByClassName('wallet').length > 0){
                 return intradayData;
             }
-            console.log(intradayData);
             displayStockData(intradayData);
             candleStick(intradayData);
             rsiChart(dailyData);
@@ -146,7 +142,6 @@ function parseCSV(csvText) {
 }
 
 function displayStockData(data) {
-    console.log(data);
     const latestTime = Object.keys(data)[0];
     const stockInfo = data[latestTime];
 
@@ -208,6 +203,7 @@ function cal_stock_stats(portfolio) {
         const openPrice = parseFloat(openingData["1. open"]);
 
         // Calculate individual stock change values
+        const changeValue = (closePrice - openPrice) * quantity;
         const totalGainLoss = (closePrice * quantity) - (openPrice * quantity);
         const todayChangePercentage = ((closePrice - openPrice) / openPrice) * 100;
 
@@ -238,13 +234,16 @@ function cal_stock_stats(portfolio) {
     });
 
     // Calculate the overall portfolio change percentage
-    const portfolioChangePercentage = (totalChangeValue / initialTotalValue) * 100;
+    let portfolioChangePercentage = (totalChangeValue / initialTotalValue) * 100;
+    portfolioChangePercentage = isNaN(portfolioChangePercentage) ? 0 : portfolioChangePercentage;
 
     // Update the total portfolio change if element exists
-    const todayChangeElement = document.getElementById('today_change');
-    if (todayChangeElement) {
-        todayChangeElement.textContent = `$${totalChangeValue.toFixed(2)} (${portfolioChangePercentage.toFixed(2)}%)`;
-        todayChangeElement.style.color = totalChangeValue >= 0 ? '#00e676' : '#ff1744';
+    const todayChangeElements = document.getElementsByClassName('today_change');
+    if (todayChangeElements.length > 0) {
+        for (let element of todayChangeElements) {
+            element.textContent = `$${totalChangeValue.toFixed(2)} (${portfolioChangePercentage.toFixed(2)}%)`;
+            element.style.color = totalChangeValue >= 0 ? '#00e676' : '#ff1744';
+        }
     }
 
     // Update the aggregated total gain/loss if element exists

@@ -3,8 +3,6 @@ include 'tradingdg13_connect.php';
 
 $userid = $_SESSION['username'];
 
-echo $userid;
-
 $sql = "SELECT * FROM transactions WHERE username = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $userid);

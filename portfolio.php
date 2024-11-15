@@ -104,7 +104,7 @@ $email = $_SESSION['email'];
                             <tbody>
                                 <tr>
                                     <td id="holdings-total-value"><?php echo "$" . number_format($totalStockValue, 2, '.', ','); ?></td>
-                                    <td id="today_change">$0.00 (0.00%)</td>
+                                    <td class="today_change">$0.00 (0.00%)</td>
                                     <td id="holdings-total-gain-loss">$0.00</td>
                                 </tr>
                             </tbody>

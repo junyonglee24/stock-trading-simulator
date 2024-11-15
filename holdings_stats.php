@@ -2,7 +2,6 @@
 include 'tradingdg13_connect.php';
 
 $userid = $_SESSION['username'];
-// $userid = "joshi37y";
 
 $sql = "SELECT asset_id, quantity, price FROM userportfolio WHERE username = ?";
 $stmt = $conn->prepare($sql);
