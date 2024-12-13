@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'tradingdg13_connect.php';
+include $_SERVER['DOCUMENT_ROOT'] . "/stock-trading-simulator/php/account/tradingdg13_connect.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstName = $_POST['firstName'];
@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['lastName'] = $lastName;
         $_SESSION['email'] = $email;
 
-        header("Location: settings.php?status=success");
+        header("Location: /stock-trading-simulator/php/pages/settings.php?status=success");
         
     } else {
-        header("Location: settings.php?status=error");
+        header("Location: /stock-trading-simulator/php/pages/settings.php?status=error");
         
     }
     

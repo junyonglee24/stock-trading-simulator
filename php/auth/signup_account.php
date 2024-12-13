@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "tradingdg13_connect.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/stock-trading-simulator/php/account/tradingdg13_connect.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     $firstname = $_POST['firstname'];
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $_SESSION['error'] = "Username or email already taken. Please login or choose a different one.";
-        header("Location: signup.php");
+        header("Location: /stock-trading-simulator/php/auth/signup.php");
         exit();
     } else {
         $stmt->close();
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } catch (Exception $e) {
             $conn->rollback();
             $_SESSION['error'] = "An error occurred during signup. Please try again.";
-            header("Location: signup.php");
+            header("Location: /stock-trading-simulator/php/auth/signup.php");
             exit();
         }
     }

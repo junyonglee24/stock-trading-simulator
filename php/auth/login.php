@@ -1,9 +1,9 @@
 <?php
-include "tradingdg13_connect.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/stock-trading-simulator/php/account/tradingdg13_connect.php";
 session_start();
 
 if (isset($_SESSION['username'])) {
-    header("Location: dashboard.php");
+    header("Location: /stock-trading-simulator/index.php");
     exit;
 }
 ?>
@@ -15,7 +15,7 @@ if (isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📈 NASDAQ - Trade Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/stock-trading-simulator/assets/css/login.css">
 </head>
 <body>
     <div class="container">
@@ -48,7 +48,7 @@ if (isset($_SESSION['username'])) {
             }
             ?>
 
-            <form action="sessions.php" method="POST" class="login-form">
+            <form action="/stock-trading-simulator/php/account/sessions.php" method="POST" class="login-form">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
@@ -65,7 +65,7 @@ if (isset($_SESSION['username'])) {
                 <button type="submit" class="sign-in">Sign In</button>
 
                 <div class="links">
-                    <a href="signup.php" class="create-account">Create an account</a>
+                    <a href="/stock-trading-simulator/php/auth/signup.php" class="create-account">Create an account</a>
                 </div>
             </form>
         </div>

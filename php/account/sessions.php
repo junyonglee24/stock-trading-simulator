@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'tradingdg13_connect.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/tradingdg13_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
@@ -21,16 +21,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['firstName'] = $user['firstName'];
             $_SESSION['lastName'] = $user['lastName'];
 
-            header("Location: dashboard.php"); 
+            header("Location: /stock-trading-simulator/index.php"); 
             exit;
         } else {
             $_SESSION['login_error'] = "Incorrect email or password.";
-            header("Location: login.php");
+            header("Location: /stock-trading-simulator/php/auth/login.php");
             exit();
         }
     } else {
         $_SESSION['login_error'] = "Email has not been registered yet. Create an account with us!";
-            header("Location: login.php");
+            header("Location: /stock-trading-simulator/php/auth/login.php");
             exit();
     }
 }

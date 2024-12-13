@@ -1,5 +1,5 @@
 <?php
-require 'tradingdg13_connect.php';
+require '/stock-trading-simulator/php/account/tradingdg13_connect.php';
 
 $sql = "SELECT id, password FROM users";
 $result = $conn->query($sql);

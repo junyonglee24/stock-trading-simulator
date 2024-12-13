@@ -1,12 +1,12 @@
 <?php
-include 'tradingdg13_connect.php';
+include $_SERVER['DOCUMENT_ROOT'] . "/stock-trading-simulator/php/account/tradingdg13_connect.php";
 session_start();
 
 if (isset($_SESSION['username'])) {
     $userid = $_SESSION['username'];
 } else {
     $_SESSION['message'] = "User not logged in.";
-    header("Location: login.php");
+    header("Location: /stock-trading-simulator/php/auth/login.php");
     exit();
 }
 
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($balance < $totalprice) {
             $_SESSION['message'] = "Insufficient balance for this transaction.";
-            header("Location: stockpage_view.php");
+            header("Location: /stock-trading-simulator/php/pages/stockpage.php");
             exit();
         }
 
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$updateBalanceStmt->execute()) {
             $_SESSION['message'] = "Error updating balance: " . $updateBalanceStmt->error;
             $updateBalanceStmt->close();
-            header("Location: stockpage_view.php");
+            header("Location: /stock-trading-simulator/php/pages/stockpage.php");
             exit();
         }
         $updateBalanceStmt->close();
@@ -89,13 +89,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (is_null($portfolioQuantity)) {
             $_SESSION['message'] = "Stock not found in your portfolio.";
-            header("Location: stockpage_view.php");
+            header("Location: /stock-trading-simulator/php/pages/stockpage.php");
             exit();
         }        
 
         if ($portfolioQuantity < $quantity) {
             $_SESSION['message'] = "Insufficient stock quantity for this transaction.";
-            header("Location: stockpage_view.php");
+            header("Location: /stock-trading-simulator/php/pages/stockpage.php");
             exit();
         }
 
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$updateBalanceStmt->execute()) {
             $_SESSION['message'] = "Error updating balance: " . $updateBalanceStmt->error;
             $updateBalanceStmt->close();
-            header("Location: stockpage_view.php");
+            header("Location: /stock-trading-simulator/php/pages/stockpage.php");
             exit();
         }
         $updateBalanceStmt->close();
@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare($sql);
     if ($stmt === false) {
         $_SESSION['message'] = "Error preparing statement: " . $conn->error;
-        header("Location: stockpage_view.php");
+        header("Location: /stock-trading-simulator/php/pages/stockpage.php");
         exit();
     }
 
@@ -159,6 +159,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 
-    header("Location: stockpage_view.php");
+    header("Location: /stock-trading-simulator/php/pages/stockpage.php");
     exit();
 ?>

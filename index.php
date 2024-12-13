@@ -1,9 +1,10 @@
 <?php
-include "tradingdg13_connect.php";
+
+include $_SERVER['DOCUMENT_ROOT'] . "/stock-trading-simulator/php/account/tradingdg13_connect.php";
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: /stock-trading-simulator/php/auth/login.php");
     exit;
 }
 
@@ -21,20 +22,20 @@ $email = $_SESSION['email'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="dashboard-styles.css">
+    <link rel="stylesheet" href="/stock-trading-simulator/assets/css/dashboard-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="dashboard.js"></script>
+    <script src="/stock-trading-simulator/assets/js/dashboard.js"></script>
 </head>
 <body>
     <div class="sidebar">
-        <div class="sidebar-item"><a href="dashboard.php"><i class="ri-global-line"></i></a></div>
-        <div class="sidebar-item"><a href="stockpage_view.php"><i class="ri-bar-chart-line"></i></a></div>
-        <div class="sidebar-item"><a href="wallet.php"><i class="ri-folder-line"></i></a></div>
-        <div class="sidebar-item"><a href="portfolio.php"><i class="ri-arrow-right-line"></i></a></div>
-        <div class="sidebar-item"><a href="settings.php"><i class="ri-settings-line"></i></a></div>
-        <div class="sidebar-item"><a href="contactus.php"><i class="ri-question-line"></i></a></div>
+        <div class="sidebar-item"><a href="index.php"><i class="ri-global-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/stockpage.php"><i class="ri-bar-chart-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/wallet.php"><i class="ri-folder-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/portfolio.php"><i class="ri-arrow-right-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/settings.php"><i class="ri-settings-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/contactus.php"><i class="ri-question-line"></i></a></div>
     </div>
     <div class="navbar">
         <div class="user-info">
@@ -50,7 +51,7 @@ $email = $_SESSION['email'];
         <div class="search-bar">
         </div>
         <div class="logout-button">
-        <a href="logout.php" class="logout-link"><i class="ri-logout-box-line"></i> Logout</a>
+        <a href="/stock-trading-simulator/php/auth//stock-trading-simulator/php/auth/logout.php" class="logout-link"><i class="ri-logout-box-line"></i> Logout</a>
     </div>
     </div>
     <div class="dashboard">
@@ -78,7 +79,7 @@ $email = $_SESSION['email'];
                 <div class="watchlist-item" id="watchlist-item-MSFT">
         <div class="stock-info">
             <div class="stock-symbol">
-                <a href="stockpage_view.php?symbol=MSFT" target="_blank">MSFT</a>
+                <a href="/stock-trading-simulator/php/pages/stockpage.php?symbol=MSFT" target="_blank">MSFT</a>
             </div>
             <div class="stock-name">
                 Microsoft Corp.
@@ -96,7 +97,7 @@ $email = $_SESSION['email'];
                 <div class="watchlist-item" id="watchlist-item-NVDA">
         <div class="stock-info">
         <div class="stock-symbol">
-            <a href="stockpage_view.php?symbol=NVDA" target="_blank">NVDA</a>
+            <a href="/stock-trading-simulator/php/pages/stockpage.php?symbol=NVDA" target="_blank">NVDA</a>
         </div>
             <div class="stock-name">
                 NVIDIA
@@ -114,7 +115,7 @@ $email = $_SESSION['email'];
         <div class="watchlist-item" id="watchlist-item-APPL">
         <div class="stock-info">
             <div class="stock-symbol">
-            <a href="stockpage_view.php?symbol=APPL" target="_blank">APPL</a>
+            <a href="/stock-trading-simulator/php/pages/stockpage.php?symbol=APPL" target="_blank">APPL</a>
             </div>
             <div class="stock-name">
                 Apple Inc.
@@ -132,7 +133,7 @@ $email = $_SESSION['email'];
     <div class="watchlist-item" id="watchlist-item-GOOGL">
         <div class="stock-info">
             <div class="stock-symbol">
-                <a href="stockpage_view.php?symbol=GOOGL" target="_blank">GOOGL</a>
+                <a href="/stock-trading-simulator/php/pages/stockpage.php?symbol=GOOGL" target="_blank">GOOGL</a>
             </div>
             <div class="stock-name">
                 Alphabet Inc.

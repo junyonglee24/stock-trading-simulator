@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: /stock-trading-simulator/php/auth/login.php");
     exit;
 }
 
@@ -19,29 +19,29 @@ $email = $_SESSION['email'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Managed Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="stockpage.css">
+    <link rel="stylesheet" href="/stock-trading-simulator/assets/css/stockpage.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
     <?php 
-    include 'holdings_stats.php';
-    include 'retrieve_balance.php';
-    // include 'retrieve_transactions.php'
+    include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/holdings_stats.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/retrieve_balance.php';
+    // include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/retrieve_/stock-trading-simulator/php/account/transactions.php'
     ?>
     <script>
         var portfolio_data = <?php echo $portfolio_data; ?>;
     </script>
-    <script src="chart_csv.js"></script>
-    <script src="stock_api_csv.js"></script>
+    <script src="/stock-trading-simulator/assets/js/chart_csv.js"></script>
+    <script src="/stock-trading-simulator/assets/js/stock_api_csv.js"></script>
 </head>
 <body>
     <div class="sidebar">
-        <div class="sidebar-item"><a href="dashboard.php"><i class="ri-global-line"></i></a></div>
-        <div class="sidebar-item"><a href="stockpage_view.php"><i class="ri-bar-chart-line"></i></a></div>
-        <div class="sidebar-item"><a href="wallet.php"><i class="ri-folder-line"></i></a></div>
-        <div class="sidebar-item"><a href="portfolio.php"><i class="ri-arrow-right-line"></i></a></div>
-        <div class="sidebar-item"><a href="settings.php"><i class="ri-settings-line"></i></a></div>
-        <div class="sidebar-item"><a href="contactus.php"><i class="ri-question-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/index.php"><i class="ri-global-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/stockpage.php"><i class="ri-bar-chart-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/wallet.php"><i class="ri-folder-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/portfolio.php"><i class="ri-arrow-right-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/settings.php"><i class="ri-settings-line"></i></a></div>
+        <div class="sidebar-item"><a href="/stock-trading-simulator/php/pages/contactus.php"><i class="ri-question-line"></i></a></div>
     </div>
     <div class="navbar">
         <div class="user-info">
@@ -66,7 +66,7 @@ $email = $_SESSION['email'];
         <div class="nav-bar-search-bar">
         </div>
         <div class="logout-button">
-            <a href="logout.php" class="logout-link"><i class="ri-logout-box-line"></i> Logout</a>
+            <a href="/stock-trading-simulator/php/auth//stock-trading-simulator/php/auth/logout.php" class="logout-link"><i class="ri-logout-box-line"></i> Logout</a>
         </div>
     </div>
         <div class="top-panel">

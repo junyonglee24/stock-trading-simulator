@@ -14,7 +14,7 @@ unset($_SESSION['success_message']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📈 Create a New Account - NASDAQ-Trade</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="/stock-trading-simulator/assets/css/signup.css">
 </head>
 <body>
     <div class="container">
@@ -48,7 +48,7 @@ unset($_SESSION['success_message']);
                 <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
             <?php endif; ?>
 
-            <form action="signup_account.php" method="post" class="signup-form" onsubmit="return validateForm()">
+            <form action="/stock-trading-simulator/php/auth/signup_account.php" method="post" class="signup-form" onsubmit="return validateForm()">
                 <label for="name">First Name</label>
                 <input type="text" id="firstname" name="firstname" placeholder="John" required>
 
@@ -84,12 +84,12 @@ unset($_SESSION['success_message']);
                 <button type="submit" class="create-account">Next Page</button>
 
                 <div class="links">
-                    <span>Already have an account? </span><a href="login.php">Log In</a>
+                    <span>Already have an account? </span><a href="/stock-trading-simulator/php/auth/login.php">Log In</a>
                 </div>
             </form>
         </div>
     </div>
-    <script src="signup_validation.js"></script>
+    <script src="/stock-trading-simulator/assets/js/signup_validation.js"></script>
     <script>
         function togglePassword() {
             const passwordField = document.getElementById("password");

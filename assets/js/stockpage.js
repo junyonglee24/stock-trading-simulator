@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const formData = new FormData(tradeForm);
 
-        fetch('transactions.php', {
+        fetch('/stock-trading-simulator/php/account/transactions.php', {
             method: 'POST',
             body: formData
         })

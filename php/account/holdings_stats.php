@@ -1,5 +1,5 @@
 <?php
-include 'tradingdg13_connect.php';
+include $_SERVER['DOCUMENT_ROOT'] . "/stock-trading-simulator/php/account/tradingdg13_connect.php";
 
 $userid = $_SESSION['username'];
 
