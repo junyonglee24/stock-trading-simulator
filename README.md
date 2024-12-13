@@ -1,7 +1,7 @@
 # Stock Trading Simulator
 ![search   trade](https://github.com/user-attachments/assets/463870aa-bcbf-428c-af27-a40c5e203568)
 
-## Introduction
+## About
 The website is a trading simulator that replicates a real trading platform, allowing beginner traders to learn about trading in a risk-free environment. A free NASDAQ stock market API is integrated to fetch live and historical stock data and is updated periodically throughout the day.  
 
 In regards to implementation, we use **HTML**, **CSS**, **JavaScript** for client-side rendering, and **PHP** and **MySQL** for server-side and database operations. 
@@ -15,7 +15,7 @@ In regards to implementation, we use **HTML**, **CSS**, **JavaScript** for clien
 
 4. **Portfolio:** Review performance summaries of holdings with RSI chart to consider subsequent trades.  
 
-## Navigation Guide
+## Navigation
 .  
 ├── assets  
 ├──  ├── js  
