@@ -26,7 +26,7 @@ $email = $_SESSION['email'];
     <?php
     include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/holdings_stats.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/retrieve_balance.php';
-    include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/transactions.php'
+    include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/retrieve_transactions.php'
     ?>
     <script>
         var portfolio_data = <?php echo $portfolio_data; ?>;
@@ -57,7 +57,7 @@ $email = $_SESSION['email'];
         <div class="search-bar">
         </div>
         <div class="logout-button">
-        <a href="/stock-trading-simulator/php/auth//stock-trading-simulator/php/auth/logout.php" class="logout-link"><i class="ri-logout-box-line"></i> Logout</a>
+        <a href="/stock-trading-simulator/php/auth/stock-trading-simulator/php/auth/logout.php" class="logout-link"><i class="ri-logout-box-line"></i> Logout</a>
         </div>
     </div>
     <div class="top-panel">
