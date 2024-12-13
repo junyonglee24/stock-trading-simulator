@@ -26,7 +26,7 @@ $email = $_SESSION['email'];
     <?php
     include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/holdings_stats.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/retrieve_balance.php';
-    include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/retrieve_/stock-trading-simulator/php/account/transactions.php'
+    include $_SERVER['DOCUMENT_ROOT'] . '/stock-trading-simulator/php/account/transactions.php'
     ?>
     <script>
         var portfolio_data = <?php echo $portfolio_data; ?>;
