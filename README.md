@@ -29,11 +29,11 @@ This website hosted on local server [XAMPP](https://www.apachefriends.org/index.
 
 After XAMPP is installed on laptop:  
 
-1. Git clone this repo to the local directory `C:/xampp/htdocs/`
+1. Git clone this repo to the local directory `/xampp/htdocs/`.  
    
-2. Create database and tables by importing the SQL files at `http://localhost/phpmyadmin`
+2. Create a database named `tradingdg13` at `http://localhost/phpmyadmin`. Then, create tables by importing the SQL file `sql/tradingdg13.sql`.  
    
-3. Access the website at `http://localhost/stock-trading-simulator`  
+3. Access the website at `http://localhost/stock-trading-simulator`.    
 
 ## Contributors
 - [@jy158654](https://github.com/jy158654)
