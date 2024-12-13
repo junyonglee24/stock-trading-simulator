@@ -4,8 +4,6 @@
 ## About
 The website is a trading simulator that replicates a real trading platform, allowing beginner traders to learn about trading in a risk-free environment. A free [NASDAQ stock market API](https://www.alphavantage.co/documentation/) is integrated to fetch live and historical stock data and is updated periodically throughout the day.  
 
-In regards to implementation, we use **HTML**, **CSS**, **JavaScript** for client-side rendering, and **PHP** and **MySQL** for server-side and database operations. 
-
 ## Features
 1. **Dashboard:** View financial news and performance summaries of NASDAQ stocks for in-depth analysis.  
 
