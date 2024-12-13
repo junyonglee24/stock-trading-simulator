@@ -51,7 +51,7 @@ $email = $_SESSION['email'];
         <div class="search-bar">
         </div>
         <div class="logout-button">
-        <a href="/stock-trading-simulator/php/auth//stock-trading-simulator/php/auth/logout.php" class="logout-link"><i class="ri-logout-box-line"></i> Logout</a>
+        <a href="/stock-trading-simulator/php/auth/logout.php" class="logout-link"><i class="ri-logout-box-line"></i> Logout</a>
     </div>
     </div>
     <div class="dashboard">
