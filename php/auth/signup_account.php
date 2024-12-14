@@ -41,11 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->commit();
 
             $_SESSION['success_message'] = "Account creation successful!";
-            header("refresh:2;url=signup_profile.html"); 
+            header("refresh:2;url=/stock-trading-simulator/php/auth/signup_profile.php"); 
             exit();
 
         } catch (Exception $e) {
-            $conn->rollback();
+            $conn->rollback();  
             $_SESSION['error'] = "An error occurred during signup. Please try again.";
             header("Location: /stock-trading-simulator/php/auth/signup.php");
             exit();
