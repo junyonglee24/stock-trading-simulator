@@ -27,7 +27,7 @@ The website is a trading simulator that replicates a real trading platform, allo
 ## Launch Website
 This website hosted on local server [XAMPP](https://www.apachefriends.org/index.html).  
 
-After XAMPP is installed on laptop:  
+After XAMPP is started on laptop:  
 
 1. Git clone this repo to the local directory `/xampp/htdocs/`.  
    
