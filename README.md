@@ -25,7 +25,7 @@ The website is a trading simulator that replicates a real trading platform, allo
 └── README.md  
 
 ## Launch Website
-This website hosted on local server [XAMPP](https://www.apachefriends.org/index.html).  
+This website is hosted on local server [XAMPP](https://www.apachefriends.org/index.html).  
 
 After XAMPP is started on laptop:  
 
